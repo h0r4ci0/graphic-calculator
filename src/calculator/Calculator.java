@@ -3,19 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package calculator;
-
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptEngine;
 /**
  *
  * @author horacio
  * 
  */
 public class Calculator extends javax.swing.JFrame {
-    int number1 = 0, number2 = 0;
+    double num1 = 0.0, num2 = 0.0;
     char oper;
-    
-    
     
     public Calculator() {
         initComponents();
@@ -33,8 +28,8 @@ public class Calculator extends javax.swing.JFrame {
 
         jButton6 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        txt_input = new javax.swing.JLabel();
-        txt_output = new javax.swing.JLabel();
+        input = new javax.swing.JLabel();
+        output = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btn_equal = new javax.swing.JButton();
         num9 = new javax.swing.JButton();
@@ -54,8 +49,8 @@ public class Calculator extends javax.swing.JFrame {
         num5 = new javax.swing.JButton();
         num6 = new javax.swing.JButton();
         num3 = new javax.swing.JButton();
-        num2 = new javax.swing.JButton();
-        num1 = new javax.swing.JButton();
+        btn_num2 = new javax.swing.JButton();
+        btn_num1 = new javax.swing.JButton();
         num0 = new javax.swing.JButton();
         btn_float = new javax.swing.JButton();
         btn_del = new javax.swing.JButton();
@@ -79,15 +74,15 @@ public class Calculator extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(244, 253, 251));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txt_input.setFont(new java.awt.Font("SauceCodePro NF", 1, 18)); // NOI18N
-        txt_input.setForeground(new java.awt.Color(55, 62, 71));
-        txt_input.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jPanel1.add(txt_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 49, 316, 37));
+        input.setFont(new java.awt.Font("SauceCodePro NF", 1, 18)); // NOI18N
+        input.setForeground(new java.awt.Color(55, 62, 71));
+        input.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jPanel1.add(input, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 49, 316, 37));
 
-        txt_output.setFont(new java.awt.Font("Source Code Pro Black", 0, 48)); // NOI18N
-        txt_output.setForeground(new java.awt.Color(55, 62, 71));
-        txt_output.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jPanel1.add(txt_output, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 92, 316, 43));
+        output.setFont(new java.awt.Font("Source Code Pro Black", 0, 48)); // NOI18N
+        output.setForeground(new java.awt.Color(55, 62, 71));
+        output.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jPanel1.add(output, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 92, 316, 43));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 160));
 
@@ -367,37 +362,37 @@ public class Calculator extends javax.swing.JFrame {
         });
         jPanel2.add(num3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 50, 50));
 
-        num2.setFont(new java.awt.Font("RobotoMono Nerd Font", 0, 24)); // NOI18N
-        num2.setForeground(new java.awt.Color(55, 62, 71));
-        num2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn/02.png"))); // NOI18N
-        num2.setText("2");
-        num2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        num2.setFocusPainted(false);
-        num2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        num2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn/01.png"))); // NOI18N
-        num2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn/01_event.png"))); // NOI18N
-        num2.addActionListener(new java.awt.event.ActionListener() {
+        btn_num2.setFont(new java.awt.Font("RobotoMono Nerd Font", 0, 24)); // NOI18N
+        btn_num2.setForeground(new java.awt.Color(55, 62, 71));
+        btn_num2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn/02.png"))); // NOI18N
+        btn_num2.setText("2");
+        btn_num2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btn_num2.setFocusPainted(false);
+        btn_num2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_num2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn/01.png"))); // NOI18N
+        btn_num2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn/01_event.png"))); // NOI18N
+        btn_num2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                num2ActionPerformed(evt);
+                btn_num2ActionPerformed(evt);
             }
         });
-        jPanel2.add(num2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 50, 50));
+        jPanel2.add(btn_num2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 50, 50));
 
-        num1.setFont(new java.awt.Font("RobotoMono Nerd Font", 0, 24)); // NOI18N
-        num1.setForeground(new java.awt.Color(55, 62, 71));
-        num1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn/02.png"))); // NOI18N
-        num1.setText("1");
-        num1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        num1.setFocusPainted(false);
-        num1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        num1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn/01.png"))); // NOI18N
-        num1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn/01_event.png"))); // NOI18N
-        num1.addActionListener(new java.awt.event.ActionListener() {
+        btn_num1.setFont(new java.awt.Font("RobotoMono Nerd Font", 0, 24)); // NOI18N
+        btn_num1.setForeground(new java.awt.Color(55, 62, 71));
+        btn_num1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn/02.png"))); // NOI18N
+        btn_num1.setText("1");
+        btn_num1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btn_num1.setFocusPainted(false);
+        btn_num1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_num1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn/01.png"))); // NOI18N
+        btn_num1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn/01_event.png"))); // NOI18N
+        btn_num1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                num1ActionPerformed(evt);
+                btn_num1ActionPerformed(evt);
             }
         });
-        jPanel2.add(num1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 50, 50));
+        jPanel2.add(btn_num1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 50, 50));
 
         num0.setFont(new java.awt.Font("RobotoMono Nerd Font", 0, 24)); // NOI18N
         num0.setForeground(new java.awt.Color(55, 62, 71));
@@ -452,128 +447,128 @@ public class Calculator extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_powerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_powerActionPerformed
-        addNumber("^");
-    }//GEN-LAST:event_btn_powerActionPerformed
-
-    private void btn_percentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_percentActionPerformed
-        addNumber("%");
-    }//GEN-LAST:event_btn_percentActionPerformed
-
-    private void btn_delActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_delActionPerformed
-        String texto = txt_input.getText().substring(0, txt_input.getText().length() - 1);
-        txt_input.setText(texto);
-        //btn_equal.doClick();
-    }//GEN-LAST:event_btn_delActionPerformed
-
-    private void btn_cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cActionPerformed
-        txt_input.setText("");
-        txt_output.setText("");
-    }//GEN-LAST:event_btn_cActionPerformed
-
-    private void num2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num2ActionPerformed
-        addNumber("2");
-        //btn_equal.doClick();
-    }//GEN-LAST:event_num2ActionPerformed
-
-    private void num7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num7ActionPerformed
-        addNumber("7");
-        //btn_equal.doClick();
-    }//GEN-LAST:event_num7ActionPerformed
-
-    private void num8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num8ActionPerformed
-        addNumber("8");
-        //btn_equal.doClick();
-    }//GEN-LAST:event_num8ActionPerformed
-
-    private void num9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num9ActionPerformed
-        addNumber("9");
-        //btn_equal.doClick();
-    }//GEN-LAST:event_num9ActionPerformed
-
-    private void btn_multiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_multiplicarActionPerformed
-        addNumber("x");
-        String num1 = txt_input.getText();
-        number1 = Integer.parseInt(num1);
-        oper = '*';
-        txt_input.setText("");
-        System.out.println(num1);
-    }//GEN-LAST:event_btn_multiplicarActionPerformed
-
-    private void btn_restarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_restarActionPerformed
-        String num1 = txt_input.getText();
-        number1 = Integer.parseInt(num1);
-        oper = '-';
-        txt_input.setText("");
-        System.out.println(num1);
-    }//GEN-LAST:event_btn_restarActionPerformed
-
-    private void btn_sumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sumarActionPerformed
-       //addNumber("+");
-       String num1 = txt_input.getText();
-       number1 = Integer.parseInt(num1);
-       oper = '+';
-       txt_input.setText("");
-       System.out.println(num1);
-    }//GEN-LAST:event_btn_sumarActionPerformed
-
-    private void btn_equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equalActionPerformed
-        String num2 = txt_input.getText();
-        number2 = Integer.parseInt(num2);
-        txt_input.setText("");
-        System.out.println(num2);
-    	/*
-        try {
-            String resultado = se.eval(txt_input.getText()).toString();
-            txt_output.setText(resultado);
-        } catch (Exception e){
-            System.out.println(e);
-        }*/
-    }//GEN-LAST:event_btn_equalActionPerformed
-
-    private void btn_floatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_floatActionPerformed
-        addNumber(".");
-        //btn_equal.doClick();
-    }//GEN-LAST:event_btn_floatActionPerformed
-
-    private void num0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num0ActionPerformed
-       addNumber("0");
-       //btn_equal.doClick();
-    }//GEN-LAST:event_num0ActionPerformed
-
-    private void num1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num1ActionPerformed
+    private void num0ActionPerformed(java.awt.event.ActionEvent evt) {
+        addNumber("0");
+    }
+    
+    private void btn_num1ActionPerformed(java.awt.event.ActionEvent evt) {
         addNumber("1");
-        //btn_equal.doClick();
-    }//GEN-LAST:event_num1ActionPerformed
-
-    private void num3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num3ActionPerformed
+    }
+    
+    private void btn_num2ActionPerformed(java.awt.event.ActionEvent evt) {
+        addNumber("2");
+    }
+    
+    private void num3ActionPerformed(java.awt.event.ActionEvent evt) {
         addNumber("3");
-        //btn_equal.doClick();
-    }//GEN-LAST:event_num3ActionPerformed
-
-    private void num4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num4ActionPerformed
+    }
+    
+    private void num4ActionPerformed(java.awt.event.ActionEvent evt) {
         addNumber("4");
-        //btn_equal.doClick();
-    }//GEN-LAST:event_num4ActionPerformed
-
-    private void num5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num5ActionPerformed
+    }
+    
+    private void num5ActionPerformed(java.awt.event.ActionEvent evt) {
         addNumber("5");
-        //btn_equal.doClick();
-    }//GEN-LAST:event_num5ActionPerformed
-
-    private void num6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num6ActionPerformed
+    }
+    
+    private void num6ActionPerformed(java.awt.event.ActionEvent evt) {
         addNumber("6");
-        //btn_equal.doClick();
-    }//GEN-LAST:event_num6ActionPerformed
-
-    private void btn_dividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_dividirActionPerformed
-       addNumber("÷");
-       String num1 = txt_input.getText();
-       number1 = Integer.parseInt(num1);
-       oper = '/';
-       txt_input.setText("");
-       System.out.println(num1);
-    }//GEN-LAST:event_btn_dividirActionPerformed
+    }
+    
+    private void num7ActionPerformed(java.awt.event.ActionEvent evt) {
+        addNumber("7");
+    }
+    
+    private void num8ActionPerformed(java.awt.event.ActionEvent evt) {
+        addNumber("8");
+    }
+    
+    private void num9ActionPerformed(java.awt.event.ActionEvent evt) {
+        addNumber("9");
+    }
+    
+    private void btn_floatActionPerformed(java.awt.event.ActionEvent evt) {
+        addNumber(".");
+    }
+    
+    private void btn_delActionPerformed(java.awt.event.ActionEvent evt) {
+        String texto = input.getText();
+        if (!texto.isEmpty()) {
+            texto = texto.substring(0, texto.length() - 1);
+            input.setText(texto);
+        }
+    }
+    
+    private void btn_cActionPerformed(java.awt.event.ActionEvent evt) {
+        input.setText("");
+        output.setText("");
+    }
+    
+    private void btn_powerActionPerformed(java.awt.event.ActionEvent evt) {
+        performOperation('^');
+    }
+    
+    private void btn_percentActionPerformed(java.awt.event.ActionEvent evt) {
+        performOperation('%');
+    }
+    
+    private void btn_multiplicarActionPerformed(java.awt.event.ActionEvent evt) {
+        performOperation('*');
+    }
+    
+    private void btn_dividirActionPerformed(java.awt.event.ActionEvent evt) {
+        performOperation('/');
+    }
+    
+    private void btn_restarActionPerformed(java.awt.event.ActionEvent evt) {
+        performOperation('-');
+    }
+    
+    private void btn_sumarActionPerformed(java.awt.event.ActionEvent evt) {
+        performOperation('+');
+    }
+    
+    private void btn_equalActionPerformed(java.awt.event.ActionEvent evt) {
+        calculateResult();
+    }
+    
+    private void performOperation(char operator) {
+        num1 = Double.parseDouble(input.getText());
+        oper = operator;
+        input.setText("");
+    }
+    
+    private void calculateResult() {
+        double num2 = Double.parseDouble(input.getText());
+        input.setText("");
+    
+        double resultado = 0;
+    
+        switch (oper) {
+            case '+':
+                resultado = num1 + num2;
+                break;
+            case '-':
+                resultado = num1 - num2;
+                break;
+            case '*':
+                resultado = num1 * num2;
+                break;
+            case '/':
+                resultado = num1 / num2;
+                break;
+            case '%':
+                resultado = (num1 * num2) / 100;
+                break;
+            case '^':
+                resultado = Math.pow(num1, num2);
+                break;
+        }
+        
+        output.setText(Double.toString(resultado));
+        num1 = resultado;
+        
+    }
 
     /**
      * @param args the command line arguments
@@ -611,7 +606,7 @@ public class Calculator extends javax.swing.JFrame {
     }
     
     public void addNumber(String digit){
-        txt_input.setText(txt_input.getText() + digit);
+        input.setText(input.getText() + digit);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -632,8 +627,8 @@ public class Calculator extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton num0;
-    private javax.swing.JButton num1;
-    private javax.swing.JButton num2;
+    private javax.swing.JButton btn_num1;
+    private javax.swing.JButton btn_num2;
     private javax.swing.JButton num3;
     private javax.swing.JButton num4;
     private javax.swing.JButton num5;
@@ -641,7 +636,7 @@ public class Calculator extends javax.swing.JFrame {
     private javax.swing.JButton num7;
     private javax.swing.JButton num8;
     private javax.swing.JButton num9;
-    private javax.swing.JLabel txt_input;
-    private javax.swing.JLabel txt_output;
+    private javax.swing.JLabel input;
+    private javax.swing.JLabel output;
     // End of variables declaration//GEN-END:variables
 }
