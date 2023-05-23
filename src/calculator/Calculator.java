@@ -12,9 +12,10 @@ import javax.script.ScriptEngine;
  * 
  */
 public class Calculator extends javax.swing.JFrame {
-
-    ScriptEngineManager sem = new ScriptEngineManager();
-    ScriptEngine se = sem.getEngineByName("JavaScript");    
+    int number1 = 0, number2 = 0;
+    char oper;
+    
+    
     
     public Calculator() {
         initComponents();
@@ -462,7 +463,7 @@ public class Calculator extends javax.swing.JFrame {
     private void btn_delActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_delActionPerformed
         String texto = txt_input.getText().substring(0, txt_input.getText().length() - 1);
         txt_input.setText(texto);
-        btn_equal.doClick();
+        //btn_equal.doClick();
     }//GEN-LAST:event_btn_delActionPerformed
 
     private void btn_cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cActionPerformed
@@ -472,82 +473,106 @@ public class Calculator extends javax.swing.JFrame {
 
     private void num2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num2ActionPerformed
         addNumber("2");
-        btn_equal.doClick();
+        //btn_equal.doClick();
     }//GEN-LAST:event_num2ActionPerformed
 
     private void num7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num7ActionPerformed
         addNumber("7");
-        btn_equal.doClick();
+        //btn_equal.doClick();
     }//GEN-LAST:event_num7ActionPerformed
 
     private void num8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num8ActionPerformed
         addNumber("8");
-        btn_equal.doClick();
+        //btn_equal.doClick();
     }//GEN-LAST:event_num8ActionPerformed
 
     private void num9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num9ActionPerformed
         addNumber("9");
-        btn_equal.doClick();
+        //btn_equal.doClick();
     }//GEN-LAST:event_num9ActionPerformed
 
     private void btn_multiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_multiplicarActionPerformed
         addNumber("x");
+        String num1 = txt_input.getText();
+        number1 = Integer.parseInt(num1);
+        oper = '*';
+        txt_input.setText("");
+        System.out.println(num1);
     }//GEN-LAST:event_btn_multiplicarActionPerformed
 
     private void btn_restarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_restarActionPerformed
-        addNumber("-");
+        String num1 = txt_input.getText();
+        number1 = Integer.parseInt(num1);
+        oper = '-';
+        txt_input.setText("");
+        System.out.println(num1);
     }//GEN-LAST:event_btn_restarActionPerformed
 
     private void btn_sumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sumarActionPerformed
-       addNumber("+");
+       //addNumber("+");
+       String num1 = txt_input.getText();
+       number1 = Integer.parseInt(num1);
+       oper = '+';
+       txt_input.setText("");
+       System.out.println(num1);
     }//GEN-LAST:event_btn_sumarActionPerformed
 
     private void btn_equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equalActionPerformed
+        String num2 = txt_input.getText();
+        number2 = Integer.parseInt(num2);
+        txt_input.setText("");
+        System.out.println(num2);
+    	/*
         try {
             String resultado = se.eval(txt_input.getText()).toString();
             txt_output.setText(resultado);
         } catch (Exception e){
-            System.out.println("Error: Catch!");
-        }
+            System.out.println(e);
+        }*/
     }//GEN-LAST:event_btn_equalActionPerformed
 
     private void btn_floatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_floatActionPerformed
         addNumber(".");
-        btn_equal.doClick();
+        //btn_equal.doClick();
     }//GEN-LAST:event_btn_floatActionPerformed
 
     private void num0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num0ActionPerformed
        addNumber("0");
-       btn_equal.doClick();
+       //btn_equal.doClick();
     }//GEN-LAST:event_num0ActionPerformed
 
     private void num1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num1ActionPerformed
         addNumber("1");
-        btn_equal.doClick();
+        //btn_equal.doClick();
     }//GEN-LAST:event_num1ActionPerformed
 
     private void num3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num3ActionPerformed
         addNumber("3");
-        btn_equal.doClick();
+        //btn_equal.doClick();
     }//GEN-LAST:event_num3ActionPerformed
 
     private void num4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num4ActionPerformed
         addNumber("4");
-        btn_equal.doClick();
+        //btn_equal.doClick();
     }//GEN-LAST:event_num4ActionPerformed
 
     private void num5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num5ActionPerformed
         addNumber("5");
-        btn_equal.doClick();
+        //btn_equal.doClick();
     }//GEN-LAST:event_num5ActionPerformed
 
     private void num6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num6ActionPerformed
         addNumber("6");
-        btn_equal.doClick();
+        //btn_equal.doClick();
     }//GEN-LAST:event_num6ActionPerformed
 
     private void btn_dividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_dividirActionPerformed
        addNumber("÷");
+       String num1 = txt_input.getText();
+       number1 = Integer.parseInt(num1);
+       oper = '/';
+       txt_input.setText("");
+       System.out.println(num1);
     }//GEN-LAST:event_btn_dividirActionPerformed
 
     /**
